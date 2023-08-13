@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Location</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="geostyle.css">
+</head>
+<body>
+    <h1><center>Current Location</center></h1>
+<div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+    <p>Latitude: <span id="lat"></span></p>
+    <p>Longitude: <span id="long"></span></p>
+    <p>Magnitude: <span id="magnitude"></span></p>
+
+    <script>
+        function GetMap() {
+            var map = new Microsoft.Maps.Map('#myMap', {
+                credentials: "Amfwgyl-tezf5VxyQYxu9-JAF8dlJ-aikF-TY0dC9nYaJz1SXeCVBhoGahKH4XFt"
+            });
+
+            // Request the user's location
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var latitude = position.coords.latitude.toFixed(6);
+                var longitude = position.coords.longitude.toFixed(6);
+
+                // Display latitude and longitude
+                document.getElementById("lat").innerText = latitude;
+                document.getElementById("long").innerText = longitude;
+
+                // Calculate and display magnitude
+                var magnitude = Math.sqrt(Math.pow(position.coords.latitude, 2) + Math.pow(position.coords.longitude, 2));
+                document.getElementById("magnitude").innerText = magnitude.toFixed(6);
+
+                var loc = new Microsoft.Maps.Location(
+                    position.coords.latitude,
+                    position.coords.longitude);
+
+                // Add a pushpin at the user's location.
+                var pin = new Microsoft.Maps.Pushpin(loc);
+                map.entities.push(pin);
+
+                // Center the map on the user's location.
+                map.setView({ center: loc, zoom: 15 });
+            });
+        }
+    </script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+</body>
+</html>
+
+
+
+

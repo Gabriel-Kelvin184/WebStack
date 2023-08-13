@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("anime-road-to-city-everlasting-summer-4k-ep.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#myMap {
+    width: 80%;
+    height: 400px;
+    margin: 20px 0;
+}
+
+p {
+    text-align: end;
+    color: rgb(255, 255, 255);
+    margin: 5px ; /* Add spacing between paragraphs */
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    margin: 5px 0; /* Add spacing above and below the heading */
+}
+
