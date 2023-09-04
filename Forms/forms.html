@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form action="/signup" method="post" onsubmit="return validateForm()">
+  <h2>Registration Form</h2>
+
+  UserName: <input type="text" name="username" id="username" placeholder="Username" required><br><br>
+  <span id="usernameError" class="error"></span>
+
+  Email: <input type="email" name="email" id="email" placeholder="Email" required><br><br>
+  <span id="emailError" class="error"></span>
+
+  Password: <input type="password" name="password" id="password" placeholder="Password" required><br><br>
+  <span id="passwordError" class="error"></span>
+
+  Confirm Password: <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required><br><br>
+  <span id="confirmPasswordError" class="error"></span>
+
+  <input type="submit" value="Sign Up">
+</form>
+
+<script>
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (username == "") {
+    document.getElementById("usernameError").innerHTML = "Please enter your username";
+    return false;
+  }
+
+  if (email == "") {
+    document.getElementById("emailError").innerHTML = "Please enter your email";
+    return false;
+  }
+
+  if (!validateEmail(email)) {
+    document.getElementById("emailError").innerHTML = "Please enter a valid email address";
+    return false;
+  }
+
+  if (password == "") {
+    document.getElementById("passwordError").innerHTML = "Please enter your password";
+    return false;
+  }
+
+  if (password.length < 6) {
+    document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters long";
+    return false;
+  }
+
+  if (password != confirmPassword) {
+    document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match";
+    return false;
+  }
+
+  return true;
+}
+
+function validateEmail(email) {
+  var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return re.test(email);
+}
+</script>
+
+</body>
+</html>

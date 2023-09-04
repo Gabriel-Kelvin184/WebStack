@@ -1,0 +1,31 @@
+/* Stylesheet for Sign Up Form */
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+    background-color: #3CBC8D;
+    color: white;
+    cursor: pointer;
+  }
+  
+  span.error {
+    color: red;
+    font-size: 12px;
+  }
+  
