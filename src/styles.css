@@ -1,0 +1,126 @@
+/* App container */
+body {
+  background-image: url("3.jpg");
+  background-size: cover;
+  color: #fff; /* Light text color */
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Task list */
+.task-list {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #1e1e1e; /* Dark background for task list */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+}
+
+/* Task item */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+  padding: 12px;
+  background-color: #2e2e2e; /* Darker task item background */
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.task-item span {
+  flex-grow: 1;
+  margin-right: 8px;
+  color: #fff; /* Light text color */
+}
+
+/* Edit and Delete buttons */
+.task-item button {
+  margin-left: 4px;
+  cursor: pointer;
+  background-color: #333; /* Dark button background */
+  border: none;
+  color: #fff; /* Light text color */
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.task-item button:hover {
+  background-color: #555; /* Slightly lighter on hover */
+}
+
+/* Edit button */
+.edit-button {
+  background-color: #4caf50; /* Green edit button */
+}
+
+.edit-button:hover {
+  background-color: #45a045; /* Darker green on hover */
+}
+
+/* Delete button */
+.delete-button {
+  background-color: #e74c3c; /* Red delete button */
+}
+
+.delete-button:hover {
+  background-color: #d93728; /* Darker red on hover */
+}
+
+/* Save button */
+.save-button {
+  background-color: #3498db; /* Blue save button */
+}
+
+.save-button:hover {
+  background-color: #2e86c1; /* Darker blue on hover */
+}
+
+/* Task form */
+.task-form {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.task-form input[type="text"] {
+  margin-top: 30px;
+  width: 400px;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  background-color: #2e2e2e; /* Dark input background */
+  color: #fff; /* Light text color */
+}
+
+/* Add a glow effect on focus */
+.task-form input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db; /* Blue border color on focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Blue glowing box shadow */
+}
+
+.task-form button {
+  margin-top: 30px;
+  margin-left: 8px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #3498db; /* Blue button background */
+  border: none;
+  color: #fff; /* Light text color */
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.task-form button:hover {
+  background-color: #2e86c1; /* Darker blue on hover */
+}
