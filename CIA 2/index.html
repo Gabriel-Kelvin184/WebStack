@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Lover's Shop</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Buy Pet Products</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Welcome to Cat Lover's Shop</h1>
+    <h3>Look at these cute cats if you're bored of shopping</h3>
+    <img id="catImage" src="" alt="Random Cat Image">
+    <button id="fetchCatButton">Fetch Cat Image</button>
+
+    <script>
+        const apiKey = 'live_4iXBBH5GcY0a1lvG2yPxmrjDZUR3K6i1WVT4b3wqQ0jK4l8wLPodvGmUVKXflS8i'; // Replace with your actual API key
+
+        // Function
+        async function fetchRandomCatImage() {
+            const response = await fetch('https://api.thecatapi.com/v1/images/search', {
+                headers: {
+                    'x-api-key': apiKey
+                }
+            });
+            const data = await response.json();
+            const imageUrl = data[0].url;
+            document.getElementById('catImage').src = imageUrl;
+        }
+
+        const fetchCatButton = document.getElementById('fetchCatButton');
+        fetchCatButton.addEventListener('click', fetchRandomCatImage);
+
+        fetchRandomCatImage();
+    </script>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>We are a passionate group of cat lovers who believe that every cat deserves the best. Our mission is to provide the finest cat products for your beloved feline friends.</p>
+    <img src="3.jpg" alt="About Cat" class="about-cat-image">
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you! Feel free to get in touch with us using the form below or via email.</p>
+    
+    <div class="contact-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email">
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" placeholder="Your Message"></textarea>
+        
+        <button type="submit">Send Message</button>
+    </div>
+</section>
+
+</html>
